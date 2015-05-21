@@ -10,7 +10,7 @@ Source0:	%{name}-%{version}.tar.xz
 Source100:	%{name}.rpmlintrc
 BuildRequires:	pkgconfig(python2)
 BuildRequires:  python-distribute
-Requires:       python-pyparsing
+Requires:       python-parsing
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 

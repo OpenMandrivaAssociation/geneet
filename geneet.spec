@@ -4,16 +4,17 @@ Version:		76262
 Release:		0.1
 Summary:	Generator for EFL's pickler/unpickler library, EET
 License:	BSD
-Group:		Development/Utilities
+Group:		Graphical desktop/Enlightenment
 URL:		https://git.enlightenment.org/tools/geneet.git/
 Source0:	%{name}-%{version}.tar.xz
-
+Source100:	%{name}.rpmlintrc
 BuildRequires:	pkgconfig(python2)
 
 Requires:	python
 BuildRequires:  python-distribute
 Requires:       python-pyparsing
-BuildArch:	noarch
+#Below is broken enable and only src file will be built
+#BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
@@ -30,7 +31,7 @@ python setup.py build
 %install
 #rm -rf %{buildroot}
 python setup.py install --prefix=%{_prefix} --root=%{buildroot}
-
+#python setup.py install --root=%{buildroot}
 #rm -f %{buildroot}%{py_puresitedir}/%{name}-%{version}*
 
 

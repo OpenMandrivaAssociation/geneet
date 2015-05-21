@@ -9,13 +9,10 @@ URL:		https://git.enlightenment.org/tools/geneet.git/
 Source0:	%{name}-%{version}.tar.xz
 Source100:	%{name}.rpmlintrc
 BuildRequires:	pkgconfig(python2)
-
-Requires:	python
 BuildRequires:  python-distribute
 Requires:       python-pyparsing
-#Below is broken enable and only src file will be built
-#BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 
 %description
 Given a simple description about a data structure, geneet will
@@ -29,21 +26,14 @@ by using the EET library
 python setup.py build
 
 %install
-#rm -rf %{buildroot}
 python setup.py install --prefix=%{_prefix} --root=%{buildroot}
-#python setup.py install --root=%{buildroot}
-#rm -f %{buildroot}%{py_puresitedir}/%{name}-%{version}*
-
 
 %clean
 rm -rf %{buildroot}
 
 
-#%files -f %{name}.lang
-%defattr(-,root,root,-)
-#%doc doc/*
+%files
+%defattr(-,root,root)
 %{_bindir}/*
+%{python_sitelib}/*
 
-
-#%{_datadir}/applications/*
-#%{_datadir}/pixmaps/*

@@ -1,7 +1,7 @@
 
 Name:			geneet
 Version:		76262
-Release:		0.1
+Release:		1
 Summary:	Generator for EFL's pickler/unpickler library, EET
 License:	BSD
 Group:		Graphical desktop/Enlightenment

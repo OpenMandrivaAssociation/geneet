@@ -14,7 +14,7 @@ BuildRequires:	pkgconfig(python2)
 
 Requires:	python
 BuildRequires:  python-distribute
-Requires:       python-parsing
+Requires:       python-pyparsing
 #Below is broken enable and only src file will be built
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
